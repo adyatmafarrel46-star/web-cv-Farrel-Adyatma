@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farrel Adyatma — Software Engineering & Tech Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#090d16',
+                            800: '#111827',
+                            700: '#1f2937',
+                        },
+                        brand: {
+                            primary: '#6366f1', // Indigo 500
+                            secondary: '#8b5cf6', // Violet 500
+                            accent: '#06b6d4', // Cyan 500
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .hero-glow {
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.05) 50%, rgba(0, 0, 0, 0) 80%);
+        }
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="font-extrabold text-lg text-white tracking-tight flex items-center gap-3 group">
+                <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 shadow-sm shadow-indigo-500/50 group-hover:scale-110 transition-transform"></span>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-indigo-300">Farrel Adyatma</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-indigo-400 transition-colors">Tentang Saya</a>
+                <a href="#education" class="hover:text-indigo-400 transition-colors">Pendidikan</a>
+                <a href="#experience" class="hover:text-indigo-400 transition-colors">Pengalaman & Proyek</a>
+                <a href="#skills" class="hover:text-indigo-400 transition-colors">Keterampilan</a>
+                <a href="#contact" class="hover:text-indigo-400 transition-colors">Kontak</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40">
+                    <i class="fa-solid fa-paper-plane text-xs"></i> Hubungi Saya
+                </a>
+                <button id="menu-btn" class="md:hidden text-slate-200 p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 focus:outline-none" aria-label="Menu">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800/95 backdrop-blur-md border-b border-slate-800 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#about" class="block text-slate-300 hover:text-indigo-400 font-semibold text-base">Tentang Saya</a>
+            <a href="#education" class="block text-slate-300 hover:text-indigo-400 font-semibold text-base">Pendidikan</a>
+            <a href="#experience" class="block text-slate-300 hover:text-indigo-400 font-semibold text-base">Pengalaman & Proyek</a>
+            <a href="#skills" class="block text-slate-300 hover:text-indigo-400 font-semibold text-base">Keterampilan</a>
+            <a href="#contact" class="block text-slate-300 hover:text-indigo-400 font-semibold text-base">Kontak</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative pt-36 pb-24 md:pt-48 md:pb-36 px-6 overflow-hidden">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] hero-glow pointer-events-none rounded-full blur-3xl"></div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="md:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-bold uppercase tracking-wider border border-indigo-500/30 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    Open for Internship, Freelance & Startup
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                    Halo, Saya <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400">Farrel Adyatma</span>
+                </h1>
+                <p class="text-lg md:text-xl font-semibold text-slate-300">
+                    Mahasiswa Teknik Informatika & Calon Software Engineer
+                </p>
+                <p class="text-slate-400 text-base md:text-lg leading-relaxed max-w-xl">
+                    "Berusaha yang terbaik." Memiliki fondasi kuat dalam logika pemrograman, pemecahan masalah analitis, dan pembelajaran mandiri untuk menciptakan solusi teknologi berstandar internasional.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 pt-3">
+                    <a href="#experience" class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-semibold px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 flex items-center gap-2.5">
+                        <span>Lihat Proyek Saya</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                    <a href="https://github.com/farreladyatma" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-7 py-3.5 rounded-xl transition-all shadow-sm hover:shadow flex items-center gap-2.5">
+                        <i class="fa-brands fa-github text-lg text-indigo-400"></i>
+                        <span>GitHub Profil</span>
+                    </a>
+                </div>
+            </div>
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-cyan-500 opacity-30 blur-xl group-hover:opacity-60 transition-opacity"></div>
+                    <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-indigo-500/40 shadow-2xl bg-dark-800">
+                        <img src="user_photo.png" alt="Farrel Adyatma" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/111827/ffffff?text=Farrel+Adyatma'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 bg-dark-800/50 border-y border-slate-800/80 relative">
+        <div class="max-w-4xl mx-auto space-y-10">
+            <div class="text-center space-y-2">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Profil Singkat</h2>
+                <h3 class="text-3xl font-extrabold text-white">Tentang Saya</h3>
+            </div>
+            <div class="card-gradient border-l-4 border-indigo-500 p-8 md:p-10 rounded-r-3xl shadow-xl border border-slate-700/60 space-y-6">
+                <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+                    Mahasiswa Teknik Informatika Universitas Gunadarma yang memiliki motivasi tinggi dengan fondasi kuat dalam logika, pemecahan masalah, dan pembelajaran mandiri. Menunjukkan tanggung jawab serta dedikasi tinggi melalui proyek akademik, penulisan riset ilmiah, dan kegiatan sosial. Siap berkontribusi dalam magang IT, proyek <em>freelance</em> pengembangan perangkat lunak, serta ekosistem <em>startup</em> global.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-slate-700/80 text-sm text-slate-300 font-medium">
+                    <div class="flex items-center gap-3 bg-dark-900/80 p-3.5 rounded-xl border border-slate-700/50">
+                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        <span>Depok, Jawa Barat, Indonesia</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-dark-900/80 p-3.5 rounded-xl border border-slate-700/50">
+                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <span class="truncate">adyatmafarrel46@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-dark-900/80 p-3.5 rounded-xl border border-slate-700/50">
+                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <span>+62 822-8092-8476</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-dark-900/80 p-3.5 rounded-xl border border-slate-700/50">
+                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                        <a href="https://github.com/farreladyatma" target="_blank" class="hover:text-indigo-400 truncate underline">github.com/farreladyatma</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="text-center space-y-2 mb-14">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Academic Background</h2>
+            <h3 class="text-3xl font-extrabold text-white">Pendidikan</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Univ Gunadarma -->
+            <div class="card-gradient p-8 md:p-10 rounded-3xl shadow-xl border border-slate-700/80 hover:border-indigo-500/50 transition-all relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-2.5 h-full bg-gradient-to-b from-indigo-500 to-cyan-400"></div>
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-xs font-bold px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full border border-indigo-500/30">Universitas Gunadarma</span>
+                        <h4 class="text-xl font-bold text-white mt-3">S1 Teknik Informatika</h4>
+                        <p class="text-sm font-semibold text-cyan-400 mt-1">Fakultas Teknologi Industri | Depok, Jawa Barat</p>
+                    </div>
+                    <span class="text-xs font-bold bg-dark-900 text-slate-300 px-3.5 py-1.5 rounded-xl border border-slate-700">2024 – Sekarang</span>
+                </div>
+                <ul class="space-y-3 text-slate-300 text-sm mt-4">
+                    <li class="flex items-start gap-3">
+                        <span class="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                        <span>Berfokus pada dasar-dasar ilmu komputer, perancangan algoritma, struktur data, dan prinsip rekayasa perangkat lunak.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                        <span>Aktif mengikuti kolaborasi pembuatan kode dan eksplorasi teknologi modern.</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- SMA DTBS Putra -->
+            <div class="card-gradient p-8 md:p-10 rounded-3xl shadow-xl border border-slate-700/80 hover:border-indigo-500/50 transition-all relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-2.5 h-full bg-slate-600"></div>
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-xs font-bold px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">SMA DTBS Putra</span>
+                        <h4 class="text-xl font-bold text-white mt-3">Ilmu Pengetahuan Alam (IPA)</h4>
+                        <p class="text-sm font-semibold text-cyan-400 mt-1">Bandung, Jawa Barat</p>
+                    </div>
+                    <span class="text-xs font-bold bg-dark-900 text-slate-300 px-3.5 py-1.5 rounded-xl border border-slate-700">2020 – 2024</span>
+                </div>
+                <ul class="space-y-3 text-slate-300 text-sm mt-4">
+                    <li class="flex items-start gap-3">
+                        <span class="w-5 h-5 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                        <span>Menyelesaikan kurikulum sekolah menengah dengan penekanan pada penalaran analitis dan metodologi ilmiah.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="w-5 h-5 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                        <span>Menyusun karya tulis ilmiah (KTI) mengenai pola kesehatan dan analisis data di lingkungan sekolah.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 px-6 bg-dark-800/50 border-y border-slate-800/80">
+        <div class="max-w-5xl mx-auto space-y-14">
+            <div class="text-center space-y-2">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Track Record</h2>
+                <h3 class="text-3xl font-extrabold text-white">Proyek & Pengalaman</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-gradient p-8 rounded-3xl border border-slate-700/80 flex flex-col justify-between hover:shadow-2xl hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                    <div>
+                        <div class="flex justify-between items-center mb-5">
+                            <span class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg font-bold shadow-sm">
+                                <i class="fa-solid fa-book-open"></i>
+                            </span>
+                            <span class="text-xs font-bold text-slate-300 bg-dark-900 px-3 py-1.5 rounded-xl border border-slate-700">2023 – 2024</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Penelitian KTI Mandiri</h4>
+                        <p class="text-xs font-bold text-indigo-400 mb-4 uppercase tracking-wider">Peneliti Utama & Penulis</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Menyusun riset komprehensif berjudul <em>"Dampak Pola Makan Tidak Teratur SMA DTBS Putra Terhadap Kesehatan Santri Kelas IIX"</em>. Mengelola pengumpulan data dan analisis korelasi perilaku.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-700/80 flex flex-wrap gap-2">
+                        <span class="text-xs bg-dark-900 text-slate-300 px-3 py-1 rounded-lg border border-slate-700 font-semibold">Analisis Data</span>
+                        <span class="text-xs bg-dark-900 text-slate-300 px-3 py-1 rounded-lg border border-slate-700 font-semibold">Metodologi Riset</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card-gradient p-8 rounded-3xl border border-slate-700/80 flex flex-col justify-between hover:shadow-2xl hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                    <div>
+                        <div class="flex justify-between items-center mb-5">
+                            <span class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg font-bold shadow-sm">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </span>
+                            <span class="text-xs font-bold text-slate-300 bg-dark-900 px-3 py-1.5 rounded-xl border border-slate-700">2023</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Pengabdian Masyarakat (PKM)</h4>
+                        <p class="text-xs font-bold text-indigo-400 mb-4 uppercase tracking-wider">Pengajar & Asisten Koordinator</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Berpartisipasi dalam program PKM sekolah untuk membimbing literasi Al-Quran serta pendidikan dasar anak SD & TK. Mengembangkan komunikasi interpersonal dan koordinasi kelompok.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-700/80 flex flex-wrap gap-2">
+                        <span class="text-xs bg-dark-900 text-slate-300 px-3 py-1 rounded-lg border border-slate-700 font-semibold">Kepemimpinan</span>
+                        <span class="text-xs bg-dark-900 text-slate-300 px-3 py-1 rounded-lg border border-slate-700 font-semibold">Komunikasi</span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card-gradient p-8 rounded-3xl border border-slate-700/80 flex flex-col justify-between hover:shadow-2xl hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                    <div>
+                        <div class="flex justify-between items-center mb-5">
+                            <span class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg font-bold shadow-sm">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </span>
+                            <span class="text-xs font-bold text-slate-300 bg-dark-900 px-3 py-1.5 rounded-xl border border-slate-700">2022 – 2023</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Inisiatif Kewirausahaan</h4>
+                        <p class="text-xs font-bold text-indigo-400 mb-4 uppercase tracking-wider">Koordinator Penjualan & Logistik</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Mengelola operasional stan dan relasi pelanggan saat Tabligh Akbar bersama AA Gym. Menunjukkan kemampuan negosiasi dan eksekusi operasional cepat di lingkungan padat pengunjung.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-700/80 flex flex-wrap gap-2">
+                        <span class="text-xs bg-dark-900 text-slate-300 px-3 py-1 rounded-lg border border-slate-700 font-semibold">Manajemen Logistik</span>
+                        <span class="text-xs bg-dark-900 text-slate-300 px-3 py-1 rounded-lg border border-slate-700 font-semibold">Negosiasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Skills -->
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Expertise</h2>
+                    <h3 class="text-2xl font-extrabold text-white">Keterampilan Teknis & Umum</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2.5 card-gradient border border-slate-700 rounded-2xl text-sm font-bold text-slate-200 shadow-sm flex items-center gap-2.5 hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-puzzle-piece text-indigo-400"></i> Pemecahan Masalah
+                    </span>
+                    <span class="px-4 py-2.5 card-gradient border border-slate-700 rounded-2xl text-sm font-bold text-slate-200 shadow-sm flex items-center gap-2.5 hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-brain text-indigo-400"></i> Berpikir Kritis
+                    </span>
+                    <span class="px-4 py-2.5 card-gradient border border-slate-700 rounded-2xl text-sm font-bold text-slate-200 shadow-sm flex items-center gap-2.5 hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-tasks text-indigo-400"></i> Manajemen Proyek
+                    </span>
+                    <span class="px-4 py-2.5 card-gradient border border-slate-700 rounded-2xl text-sm font-bold text-slate-200 shadow-sm flex items-center gap-2.5 hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-handshake text-indigo-400"></i> Negosiasi
+                    </span>
+                    <span class="px-4 py-2.5 card-gradient border border-slate-700 rounded-2xl text-sm font-bold text-slate-200 shadow-sm flex items-center gap-2.5 hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-bullhorn text-indigo-400"></i> Pemasaran Digital
+                    </span>
+                    <span class="px-4 py-2.5 card-gradient border border-slate-700 rounded-2xl text-sm font-bold text-slate-200 shadow-sm flex items-center gap-2.5 hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-code text-indigo-400"></i> Dasar Algoritma
+                    </span>
+                    <span class="px-4 py-2.5 card-gradient border border-slate-700 rounded-2xl text-sm font-bold text-slate-200 shadow-sm flex items-center gap-2.5 hover:border-indigo-500 transition-colors">
+                        <i class="fa-brands fa-git-alt text-indigo-400"></i> Git & Version Control
+                    </span>
+                    <span class="px-4 py-2.5 card-gradient border border-slate-700 rounded-2xl text-sm font-bold text-slate-200 shadow-sm flex items-center gap-2.5 hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-users text-indigo-400"></i> Kerjasama Tim
+                    </span>
+                </div>
+            </div>
+            <!-- Languages -->
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Communication</h2>
+                    <h3 class="text-2xl font-extrabold text-white">Bahasa</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="card-gradient p-6 rounded-2xl border border-slate-700 shadow-sm flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">ID</span>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Bahasa Indonesia</h4>
+                                <p class="text-xs text-slate-400 font-medium">Penutur Asli</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold px-3.5 py-1.5 bg-emerald-500/20 text-emerald-300 rounded-full border border-emerald-500/30">Mahir Profesional</span>
+                    </div>
+                    <div class="card-gradient p-6 rounded-2xl border border-slate-700 shadow-sm flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">EN</span>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Bahasa Inggris</h4>
+                                <p class="text-xs text-slate-400 font-medium">Literatur & Percakapan</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold px-3.5 py-1.5 bg-indigo-500/20 text-indigo-300 rounded-full border border-indigo-500/30">Dasar & Teknikal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 bg-dark-800 text-white relative overflow-hidden border-t border-slate-800">
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+            <div class="space-y-3">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Get in Touch</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Mari Berkolaborasi!</h3>
+                <p class="text-slate-400 max-w-lg mx-auto text-sm md:text-base">
+                    Tertarik berkolaborasi untuk magang IT, proyek freelance, atau inovasi startup? Jangan ragu untuk menghubungi saya melalui kontak di bawah ini.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="mailto:adyatmafarrel46@gmail.com" class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-semibold px-7 py-4 rounded-2xl transition-all shadow-xl shadow-indigo-600/30 flex items-center gap-3">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                    <span>adyatmafarrel46@gmail.com</span>
+                </a>
+                <a href="https://wa.me/6282280928476" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-7 py-4 rounded-2xl transition-all shadow-xl shadow-emerald-600/30 flex items-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>+62 822-8092-8476</span>
+                </a>
+                <a href="https://github.com/farreladyatma" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold px-7 py-4 rounded-2xl transition-all shadow-xl flex items-center gap-3">
+                    <i class="fa-brands fa-github text-xl"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-900 text-slate-500 py-10 px-6 text-center text-xs border-t border-slate-800/80">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Farrel Adyatma. All rights reserved.</p>
+            <p class="text-slate-400 font-medium">Dibuat dengan standar profesional kelas internasional.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking any navigation link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
